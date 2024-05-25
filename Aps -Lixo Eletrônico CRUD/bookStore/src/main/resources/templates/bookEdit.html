@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<title>E - WASTE</title>
+	<style>
+		body{
+          font-family: "Montserrat", sans-serif;
+          line-height: 1.7;
+          color: #ffffff;
+          background: #414890;
+  }
+
+  #booksTable {
+      color: white; /* Define a cor do texto para branco */
+  }
+
+  #booksTable th,
+  #booksTable td {
+      color: white; /* Define a cor do texto para branco */
+  }
+
+  #btn_enviar{
+      padding: 5px 10px; /* Espaçamento interno */
+      border: none; /* Remova a borda */
+      border-radius: 5px; /* Borda arredondada */
+      background-color: #1f2641; /* Cor de fundo */
+      color: #ffffff; /* Cor do texto */
+      font-size: 16px; /* Tamanho da fonte */
+      cursor: pointer; /* Altere o cursor ao passar o mouse */
+  }
+
+  #btn_enviar:hover{
+        background-color: #6c63ff; /* Altere a cor de fundo quando o cursor estiver sobre o botão */
+  }
+
+#btn_cancelar{
+      padding: 5px 10px; /* Espaçamento interno */
+      border: none; /* Remova a borda */
+      border-radius: 5px; /* Borda arredondada */
+      background-color: #FF0000; /* Cor de fundo */
+      color: #ffffff; /* Cor do texto */
+      font-size: 16px; /* Tamanho da fonte */
+      cursor: pointer; /* Altere o cursor ao passar o mouse */
+  }
+
+#btn_cancelar:hover{
+        background-color: #ff6961; /* Altere a cor de fundo quando o cursor estiver sobre o botão */
+  }
+	</style>
+</head>
+<body>
+
+<div class="container my-5 p-5" id="novo_registro">
+		<h4 class="text-center" id="titulo">Edite lixo aqui</h4>
+		<form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" th:object="${book}">
+
+			<input type="hidden" name="id" th:value="${book.id}"/>
+			<div class="mb-3">
+				<label for="name" class="form-label">Tipo de Lixo</label>
+				<input type="text" class="form-control" name="name" style="width: 100%;">
+			</div>
+
+			<div class="mb-3">
+			<label for="author" class="form-label">Quantidade</label>
+			<input type="text" class="form-control" name="author" style="width: 100%;">
+			</div>
+
+			<div class="mb-3">
+				<label for="price" class="form-label">Peso</label>
+				<div style="display: flex; align-items: center; width: 115%;" >
+					<input type="text" class="form-control" name="price" style="width: 90%;">
+					<span style="margin-left: 5px;">Gramas</span>
+				</div>
+			</div>
+			<div style="display: flex; justify-content: space-around; margin-right: 70px; margin-left: 70px;">
+				<button type="submit" class="btn btn-primary" id="btn_enviar">Adicionar</button>
+				<button type="button" class="btn btn-secondary" id="btn_cancelar">Cancelar</button>
+			</div>
+		</form>
+	</div>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+		crossorigin="anonymous"></script>
+<script>
+	document.getElementById('btn_cancelar').addEventListener('click', function() {
+		event.preventDefault(); // Evita o envio padrão do formulário
+        window.location.href = 'http://localhost:8080/available_books'; // Substitua 'sua_pagina.html' pelo URL da página para a qual você deseja redirecionar
+    });
+
+
+
+</script>
+
+</body>
+</html>

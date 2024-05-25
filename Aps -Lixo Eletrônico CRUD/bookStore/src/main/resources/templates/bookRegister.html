@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous">
+	<title>E - WASTE</title>
+	<style>
+
+		body{
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.7;
+  color: #ffffff;
+  background: #414890;
+}
+      /* Estilos para a tabela */
+#booksTable {
+color: white; /* Define a cor do texto para branco */
+}
+
+/* Estilos para as células da tabela */
+#novo_registro th {
+color: white; /* Define a cor do texto para branco */
+}
+
+#titulo {
+    text-align: center !important;
+    margin-bottom: 50px;
+}
+
+#btn_enviar{
+	padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Remova a borda */
+    border-radius: 5px; /* Borda arredondada */
+    background-color: #1f2641; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Altere o cursor ao passar o mouse */
+}
+
+#btn_enviar:hover{
+	background-color: #6c63ff; /* Altere a cor de fundo quando o cursor estiver sobre o botão */
+}
+	</style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container-fluid">
+		<a class="navbar-brand active" href="/">E - WASTE</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<ul class="navbar-nav">
+				<a class="nav-link " href="available_books">Lixo Disponível</a>
+				<a class="nav-link " href="my_books">Meu Lixo</a>
+			</ul>
+			<div class="d-flex">
+				<a class="nav-link ms-auto" href="book_register">Novo Registro de Lixo</a>
+			</div>
+		</div>
+	</div>
+</nav>
+
+
+
+<div class="container my-5 p-5" id="novo_registro">
+	<h4 class="text-center" id="titulo">Novo Registro de Lixo</h4>
+	<form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" id="form_registro">
+		<div class="mb-3">
+			<label for="name" class="form-label">Tipo de Lixo</label>
+			<input type="text" class="form-control" name="name" style="width: 100%;">
+		</div>
+
+		<div class="mb-3">
+			<label for="author" class="form-label">Quantidade</label>
+			<input type="text" class="form-control" name="author" style="width: 100%;">
+		</div>
+
+		<div class="mb-3">
+			<label for="price" class="form-label">Peso</label>
+			<div style="display: flex; align-items: center; width: 115%;" >
+				<input type="text" class="form-control" name="price" style="width: 90%;">
+				<span style="margin-left: 5px;">Gramas</span>
+			</div>
+		</div>
+
+		<center><button type="submit" class="btn btn-primary" id="btn_enviar">Adicionar</button></center>
+	</form>
+</div>
+
+
+<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity
+
+
+</body>
+</html>

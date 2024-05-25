@@ -1,0 +1,42 @@
+    #container_grafico_coluna {
+        display: flex;
+        flex-wrap: wrap;
+        /* Isso permite que os gráficos quebrem para a linha abaixo quando não houver espaço suficiente */
+        justify-content: center;
+        /* Isso centraliza os gráficos horizontalmente */
+        align-items: center;
+        /* Isso centraliza os gráficos verticalmente */
+        max-width: 900px;
+        /* Máxima largura do contêiner */
+        margin: auto;
+        /* Isso centraliza o contêiner horizontalmente */
+    }
+
+    /*GRAFICO DE BARRA*/
+    #grafico {
+        width: 400px;
+        height: 400px;
+        margin: 20px;
+        /* Espaçamento entre os gráficos */
+    }
+
+    /*CONTAINER DO GRAFICO DE PIZZA*/
+    #container_grafico_pizza {
+        display: flex;
+        justify-content: center;
+        /* Isso centraliza os gráficos horizontalmente */
+        align-items: center;
+        /* Isso centraliza os gráficos verticalmente */
+        max-width: 500px;
+        /* Máxima largura do contêiner */
+        margin: auto;
+        /* Isso centraliza o contêiner horizontalmente */
+    }
+
+    /*GRAFICO DE PIZZA*/
+    #graficoPizza {
+        width: 100px;
+        /* Largura dos gráficos */
+        height: 100px;
+        margin: 20px;
+        /* Espaçamento entre os gráficos */
